@@ -6,21 +6,15 @@ import Home from './pages/Home';
 import Courses from './pages/Courses';
 
 function App() {
-  const isVisible = import.meta.env.SSR ? false : (() => {
-    const [visible, setVisible] = React.useState(false);
-    React.useEffect(() => {
-      const toggleVisibility = () => {
-        if (window.pageYOffset > 300) {
-          setVisible(true);
-        } else {
-          setVisible(false);
-        }
-      };
-      window.addEventListener('scroll', toggleVisibility);
-      return () => window.removeEventListener('scroll', toggleVisibility);
-    }, []);
-    return visible;
-  })();
+  const [isVisible, setIsVisible] = React.useState(false);
+
+  React.useEffect(() => {
+    const toggleVisibility = () => {
+      setIsVisible(window.pageYOffset > 300);
+    };
+    window.addEventListener('scroll', toggleVisibility);
+    return () => window.removeEventListener('scroll', toggleVisibility);
+  }, []);
 
   return (
     <Router>
