@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { Search, Bell, ShoppingCart } from 'lucide-react';
 
 const Header = () => {
@@ -6,12 +7,12 @@ const Header = () => {
             <div className="w-full max-w-[1600px] flex items-center justify-between px-6 h-full">
                 <div className="flex items-center gap-10">
                     {/* Logo Section */}
-                    <div className="flex flex-col items-center cursor-pointer group shrink-0">
+                    <Link to="/" className="flex flex-col items-center cursor-pointer group shrink-0">
                         <span className="text-[22px] font-black tracking-tighter leading-none text-gray-900">APPSUMO</span>
                         <span className="text-[11px] text-[#2c78f6] font-medium italic -mt-0.5" style={{ fontFamily: 'var(--font-cursive, "Brush Script MT", "Dancing Script", cursive)' }}>
                             15 years of software deals
                         </span>
-                    </div>
+                    </Link>
 
                     {/* Search Bar */}
                     <div className="hidden md:flex items-center bg-[#ebf0f5] rounded-full px-5 py-2 w-[400px] gap-3">
@@ -25,10 +26,10 @@ const Header = () => {
                 </div>
 
                 <nav className="hidden xl:flex items-center gap-8 px-4">
-                    <a href="#" className="text-[16px] font-medium text-gray-700 hover:text-black transition-colors whitespace-nowrap">Software</a>
-                    <a href="#" className="text-[16px] font-medium text-gray-700 hover:text-black transition-colors whitespace-nowrap">Courses & more</a>
-                    <a href="#" className="text-[16px] font-medium text-gray-700 hover:text-black transition-colors whitespace-nowrap">New arrivals</a>
-                    <a href="#" className="text-[16px] font-medium text-gray-700 hover:text-black transition-colors whitespace-nowrap">Ending soon</a>
+                    <Link to="/" className="text-[16px] font-medium text-gray-700 hover:text-black transition-colors whitespace-nowrap">Software</Link>
+                    <Link to="/courses" className="text-[16px] font-medium text-gray-700 hover:text-black transition-colors whitespace-nowrap">Courses & more</Link>
+                    <Link to="#" className="text-[16px] font-medium text-gray-700 hover:text-black transition-colors whitespace-nowrap">New arrivals</Link>
+                    <Link to="#" className="text-[16px] font-medium text-gray-700 hover:text-black transition-colors whitespace-nowrap">Ending soon</Link>
                 </nav>
 
                 <div className="flex items-center gap-5 shrink-0">

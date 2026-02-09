@@ -1,73 +1,61 @@
-# React + TypeScript + Vite
+# AppSumo High-Fidelity Clone
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A professional, high-fidelity replica of the AppSumo homepage built with **React**, **TypeScript**, and **Tailwind CSS v4**. This project focuses on pixel-perfect alignment, standardized typography, and a modern design system.
 
-Currently, two official plugins are available:
+## 🚀 Live Demo
+Managed and built using **Lovable.dev** standards.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Features
 
-## React Compiler
+- **Standardized Layout**: Uniform `1600px` content width optimized for 1080p monitors.
+- **Top Deals Grid**: Interactive list of curated deals with structured borders and hover effects.
+- **Ending Soon**: Time-sensitive deal cards with countdown indicators.
+- **Staff Picks**: Refined portrait-style cards (370x520) featuring team testimonials.
+- **AI Stack**: Specialized section for the latest artificial intelligence tools.
+- **Refined UI**: 
+  - Consistent **18px / 700 Weight** deal titles.
+  - Prominent **20px / 700 Weight** product pricing.
+  - Vibrant blue Call-to-Action buttons (`#2e6fff`).
+  - Professional **Scroll-to-Top** button with scroll logic.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🛠️ Tech Stack
 
-## Expanding the ESLint configuration
+- **Framework**: [React 18](https://reactjs.org/)
+- **Build Tool**: [Vite](https://vitejs.dev/)
+- **Styling**: [Tailwind CSS v4](https://tailwindcss.com/)
+- **Language**: [TypeScript](https://www.typescriptlang.org/)
+- **Icons**: [Lucide React](https://lucide.dev/)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 📦 Installation & Setup
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/Hawky1/appscopy.git
+   cd appscopy
+   ```
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+2. **Install dependencies**:
+   ```bash
+   npm install
+   ```
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+3. **Run development server**:
+   ```bash
+   npm run dev
+   ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+4. **Build for production**:
+   ```bash
+   npm run build
+   ```
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 🎨 Design Standards
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- **Core Width**: 1600px (Centered)
+- **Primary Blue**: `#2e6fff` (Buttons, Reviews)
+- **Primary Yellow**: `#ffbd00` (Ratings)
+- **Typography**: Roboto / Barlow
+- **Section Spacing**: 60px (Vertical)
+
+---
+Built with ❤️ by Antigravity AI
