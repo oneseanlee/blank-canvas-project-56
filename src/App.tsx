@@ -11,21 +11,15 @@ import FinalCTA from './components/FinalCTA';
 import Footer from './components/Footer';
 
 function App() {
-  const isVisible = import.meta.env.SSR ? false : (() => {
-    const [visible, setVisible] = React.useState(false);
-    React.useEffect(() => {
-      const toggleVisibility = () => {
-        if (window.pageYOffset > 300) {
-          setVisible(true);
-        } else {
-          setVisible(false);
-        }
-      };
-      window.addEventListener('scroll', toggleVisibility);
-      return () => window.removeEventListener('scroll', toggleVisibility);
-    }, []);
-    return [visible, setVisible];
-  })();
+  const [isVisible, setIsVisible] = React.useState(false);
+
+  React.useEffect(() => {
+    const toggleVisibility = () => {
+      setIsVisible(window.pageYOffset > 300);
+    };
+    window.addEventListener('scroll', toggleVisibility);
+    return () => window.removeEventListener('scroll', toggleVisibility);
+  }, []);
 
   return (
     <div className="min-h-screen bg-white font-sans text-gray-900 selection:bg-blue-100 selection:text-blue-900">
@@ -38,8 +32,6 @@ function App() {
           <DealsGrid />
           <EndingSoon />
           <PromotionBanner />
-
-          {/* New Sections Requested */}
           <StaffPicks />
           <AIStack />
           <FinalCTA />
@@ -48,11 +40,9 @@ function App() {
 
       <Footer />
 
-      {/* Scroll to top button - improved UI */}
       <button
         onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-        className={`fixed bottom-8 right-8 w-14 h-14 bg-white shadow-2xl rounded-full flex flex-col items-center justify-center border border-gray-100 transition-all duration-300 z-50 group hover:scale-110 active:scale-95 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10 pointer-events-none'
-          }`}
+        className={`fixed bottom-8 right-8 w-14 h-14 bg-white shadow-2xl rounded-full flex flex-col items-center justify-center border border-gray-100 transition-all duration-300 z-50 group hover:scale-110 active:scale-95 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10 pointer-events-none'}`}
       >
         <svg
           className="w-5 h-5 text-gray-400 group-hover:text-blue-600 transition-colors mb-0.5"
